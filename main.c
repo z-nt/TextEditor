@@ -1,23 +1,30 @@
 #include <stdio.h>
-#include <unistd.h>
-#include <ctype.h>
+#include <string.h>
 #include <stdlib.h>
 
-int main(){
-    char c ;
-    while(1){
-    read(STDIN_FILENO,&c,1);
+char *createText(char *s, char *arr,int length){
 
-    if(iscntrl(c)){
-        printf("%d\n",c);
-    }else{
-        printf("%d('%c')\n",c,c);
-    }
+}
 
-    if(c == CTRL_KEY('q')){
-        break;
-    }
-    }
+
+int main(void){
+    char fileName[10];
+        
+    printf("please Enter file Name\n");
+    scanf("%s",&fileName);
+ 
+   
+
+    FILE *file;
+    file = fopen(fileName,"w");
     
-    return 0;
+
+    fopen(fileName,"a");
+
+            
+    fprintf(file,"hello World");
+    fclose(file);
+
+
+return 0;
 }
